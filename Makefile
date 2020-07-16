@@ -1,11 +1,14 @@
-MAIN = makehelper
-SRCS =   ./main.c ./makenew.c ./autofind.c
-INCLUDES =  
-LIBS =  
-CFLAGS = -Wall -O2
-LFLAGS = 
-CC = gcc
+MAIN=makehelper
+SRCS= ./modify.c ./main.c ./makenew.c ./strfr.c ./autofind.c ./readMakefile.c
+INCLUDES=
+LIBS=
+CFLAGS=-Wall -O0 -g 
+LFLAGS=
+CC=clang
 OBJS = $(SRCS:.c=.o)
+
+#End of variables
+
 .PHONY: depend clean
 all:	$(MAIN)
 	@echo  $(MAIN) has been compiled

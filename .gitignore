@@ -6,5 +6,5 @@ GRTAGS
 GTAGS
 .ctags
 tags
-Makefile2
+Makefile*
 .ccls-cache

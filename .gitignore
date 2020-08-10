@@ -1,0 +1,10 @@
+*.o
+makehelper
+helper
+GPATH
+GRTAGS
+GTAGS
+.ctags
+tags
+Makefile2
+.ccls-cache

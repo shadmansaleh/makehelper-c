@@ -7,11 +7,22 @@
 
 void assign(char *a, char *b) {
   int i = 0;
-  while (i < strlen(b)) {
+  while (i < (int)strlen(b)) {
     *(a + i) = *(b + i);
     i++;
   }
 }
+void printHello() {
+  printf("makecreate a tool to create a simpke Makefile\n\noptions : "
+         "\n\t-o\tName of programe\n\t-L\tlanguage "
+         "(c/cpp)\n\t-s\tSourcefiles\n\t-i\tHeader "
+         "files\n\t-l\tLibrary files\n\t-f\tCompiler flags\n\t-F\tLinker "
+         "flags\n\t-c\tCompiler\n\t-m\tModify current "
+         "Makefile\n\t-a\tAdd\n\t-r\tRemove\n\t-u\tAutoditect\n\t-h\tShow "
+         "this message\n\n");
+
+}
+
 int main(int argc, char *argv[]) {
   val v, w;
   memset(&v, 0, sizeof(val));
@@ -113,7 +124,7 @@ int main(int argc, char *argv[]) {
      *else if (lang == 1) {
      *  findfiles(v.SRCS, ".cpp");
      *  findfiles(v.SRCS, ".cc");
-     *  findfiles(v.SRCS, ".cxx");
+     *  findfiles(v.SRCS".cxx");
      *}
      */
     //	findfiles(INCLUDES,".h");
@@ -123,13 +134,7 @@ int main(int argc, char *argv[]) {
   if (strlen(v.SRCS) == 0 && modify == 0)
     help = 1;
   if (help) {
-    printf("makecreate a tool to create a simpke Makefile\n\noptions : "
-           "\n\t-o\tName of programe\n\t-L\tlanguage "
-           "(c/cpp)\n\t-s\tSourcefiles\n\t-i\tHeader "
-           "files\n\t-l\tLibrary files\n\t-f\tCompiler flags\n\t-F\tLinker "
-           "flags\n\t-c\tCompiler\n\t-m\tModify current "
-           "Makefile\n\t-a\tAdd\n\t-r\tRemove\n\t-u\tAutoditect\n\t-h\tShow "
-           "this message\n\n");
+    printHello();
     if (!strlen(v.SRCS))
       puts("Error : Source files not found");
     return 0;
@@ -140,7 +145,7 @@ int main(int argc, char *argv[]) {
     if (!strcmp(v.CFLAGS, "")){
       assign(v.CFLAGS, "-Wall -O0 -gdwarf-2 -Wextra -pedantic-errors");
         if(lang == 1)
-            strcat(v.CFLAGS," -Weffc++");
+            strcat(v.CFLAGS," -Weffc++ -std=c++17");
     }
     if (!strcmp(v.CC, "")) {
       if (lang == 0) {

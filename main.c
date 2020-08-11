@@ -5,15 +5,16 @@
 #include <string.h>
 #include <unistd.h>
 
-void assign(char *a, char *b) {
-  int i = 0;
-  while (i < (int)strlen(b)) {
-    *(a + i) = *(b + i);
-    i++;
-  }
+void assign(char* to, char* from)
+{
+    int i = 0;
+    while (i < (int)strlen(from)) {
+        *(to + i) = *(from + i);
+        ++i;
+    }
 }
 void printHello() {
-  printf("makecreate a tool to create a simpke Makefile\n\noptions : "
+  printf("makecreate a tool to create a simple Makefile\n\noptions : "
          "\n\t-o\tName of programe\n\t-L\tlanguage "
          "(c/cpp)\n\t-s\tSourcefiles\n\t-i\tHeader "
          "files\n\t-l\tLibrary files\n\t-f\tCompiler flags\n\t-F\tLinker "
@@ -143,7 +144,7 @@ int main(int argc, char *argv[]) {
     if (!strcmp(v.MAIN, ""))
       assign(v.MAIN, "out");
     if (!strcmp(v.CFLAGS, "")){
-      assign(v.CFLAGS, "-Wall -O0 -gdwarf-2 -Wextra -pedantic-errors");
+      assign(v.CFLAGS, "-Wall -O0 -gdwarf-4 -Wextra -pedantic-errors");
         if(lang == 1)
             strcat(v.CFLAGS," -Weffc++ -std=c++17");
     }

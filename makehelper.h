@@ -16,8 +16,9 @@ void findfiles(char *OUT, char *PATERN);
 
 char *strfr(char *s, char *f, char *r);
 
-void assign(char *a, char *b);
+void assign(char *to, char *from);
 
 void readMakefile(val *v);
 void edit(val *v, val *w, char flag);
 void modify(char *m, char *mod, char flag);
+char * getFiles(const char* path,const char *patern , int showHidden);

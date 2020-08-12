@@ -15,6 +15,7 @@ void create_new(val v);
 void findfiles(char *OUT, char *PATERN);
 
 char *strfr(char *s, char *f, char *r);
+void strrm(char *data,char *removerKey);
 
 void assign(char *a, char *b);
 

@@ -4,15 +4,20 @@
 
 void modify(char* data, char* modifier, char flag)
 {
+    char spacedData[strlen(data)+2];
+    spacedData[0] = ' ';
+    spacedData[1] = '\0';
+    strcat(spacedData,data);
+
     char *modifierToken=strtok(modifier," ");
     if(flag == 'a')
     {
         do
         {
-            if(!strstr(data,modifierToken))
+            if(!strstr(spacedData,modifierToken))
             {
-                strcat(data," ");
-                strcat(data,modifierToken);
+                strcat(spacedData," ");
+                strcat(spacedData,modifierToken);
             }
         }while((modifierToken = strtok(NULL," ")));
     }
@@ -24,10 +29,10 @@ void modify(char* data, char* modifier, char flag)
             spacedToken[0] = ' ';
             spacedToken[1] = '\0';
             strcat(spacedToken,modifierToken);
-            strrm(data,spacedToken);   
+            strrm(spacedData,spacedToken);   
         }while((modifierToken = strtok(NULL," ")));
     }
-
+    strcpy(data,spacedData+1);
 }
 
 

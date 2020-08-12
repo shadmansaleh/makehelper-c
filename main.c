@@ -14,7 +14,8 @@ void assign(char* to, char* from)
     }
 }
 void printHello() {
-  printf("makecreate a tool to create a simple Makefile\n\noptions : "
+  printf("makehelper [OPTIONS]...\n"
+          "makehelper a tool to create a simple Makefiles \nfor small c / cpp projects.\n(Version 1.0)\n\noptions : "
          "\n\t-o\tName of programe\n\t-L\tlanguage "
          "(c/cpp)\n\t-s\tSourcefiles\n\t-i\tHeader "
          "files\n\t-l\tLibrary files\n\t-f\tCompiler flags\n\t-F\tLinker "
@@ -132,12 +133,15 @@ int main(int argc, char *argv[]) {
       //	findfiles(LIBS,".so");
   }
 
-  if (strlen(inputData.SRCS) == 0 && modify == 0)
-      help = 1;
+  if (strlen(inputData.SRCS) == 0 && modify == 0 && help==0)
+  {
+    printHello();
+    if (!strlen(inputData.SRCS) && modify ==0)
+        puts("Error : Source files not found");
+    return 0;
+  }
   if (help) {
     printHello();
-    if (!strlen(inputData.SRCS))
-        puts("Error : Source files not found");
     return 0;
   }
   if (modify == 0) {

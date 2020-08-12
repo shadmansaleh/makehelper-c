@@ -136,12 +136,11 @@ char * getFiles(const char* path,const char *patern , int showHidden)
         char *outPos_P = out;
         do
         {
-            char *k=strstr(file,patern);
-            char *e=strchr(file,0);
-            if (k && e && (e-k) == paternLength)
-            {
-                int len=strlen(file);
-                strncpy(outPos_P ,file,len);
+            char* startOfExtention = strstr(file, patern);
+            char* endOfExtention = strchr(file, 0);
+            if (startOfExtention && endOfExtention && (endOfExtention - startOfExtention) == paternLength) {
+                int len=strlen(file) -2 ;
+                strncpy(outPos_P ,file+2,len);
                 strncpy(outPos_P+len," ",1);
                 outPos_P += len+1;
             }

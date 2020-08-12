@@ -10,3 +10,4 @@ Makefile*
 .ccls-cache
 .projectile
 makefile
+makehelperInstalled

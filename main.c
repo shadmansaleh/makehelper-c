@@ -89,7 +89,7 @@ int main(int argc, char *argv[]) {
             help = 1;
             break;
         case '?':
-            printf("Unknown option %c", optopt);
+            printf("Unknown option %c\n", optopt);
         }
   }
   argc -= optind;

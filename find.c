@@ -100,7 +100,6 @@ void  checkDir(const char *path,const int showHidden)
                 } 
         closedir(d);
     }
-//    return currentLoc;
 }
 
 char * getWord(char * str , char deleminator)

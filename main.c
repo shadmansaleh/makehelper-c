@@ -29,30 +29,6 @@ int main(int argc, char *argv[]) {
     val inputData, avalableData;
     memset(&inputData, 0, sizeof(val));
     memset(&avalableData, 0, sizeof(val));
-    /*	memset(v.MAIN,0,80);
-          memset(w.MAIN,0,80);
-          memset(v.SRCS,0,3000);
-          memset(v.INCLUDES,0,300);
-          memset(v.LIBS,0,300);
-          memset(v.CFLAGS,0,300);
-          memset(v.LFLAGS,0,300);
-          memset(v.CC,0,80);*/
-    /*
-   *assign(v.MAIN, "");
-   *assign(v.SRCS, "");
-   *assign(v.INCLUDES, "");
-   *assign(v.LIBS, "");
-   *assign(v.CFLAGS, "");
-   *assign(v.LFLAGS, "");
-   *assign(v.CC, "");
-   *assign(w.MAIN, "");
-   *assign(w.SRCS, "");
-   *assign(w.INCLUDES, "");
-   *assign(w.LIBS, "");
-   *assign(w.CFLAGS, "");
-   *assign(w.LFLAGS, "");
-   *assign(w.CC, "");
-   */
     short help = 0;
     short modify = 0;
     short add = 0;
@@ -168,13 +144,9 @@ int main(int argc, char *argv[]) {
       flag = 'a';
     else if (remove == 1)
       flag = 'r';
-    //		puts("2");
     readMakefile(&avalableData);
-    //		puts("3");
-    //		printf("%s\n%s\n%s\n%s\n",w.MAIN,w.INCLUDES,w.CC,w.CFLAGS);
     edit(&avalableData, &inputData, flag);
     create_new(avalableData);
-    //		puts("4");
   }
   return 0;
 }

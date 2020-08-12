@@ -40,30 +40,23 @@ void edit(val* source, val* modifier, char flag)
 {
     if (strcmp(modifier->SRCS, "")) {
         modify(source->SRCS, modifier->SRCS, flag);
-        //	puts("changed SRCS");
     }
     if (strcmp(modifier->INCLUDES, "")) {
         modify(source->INCLUDES, modifier->INCLUDES, flag);
-        //	 puts("changed INCLUDES");
     }
     if (strcmp(modifier->LIBS, "")) {
         modify(source->LIBS, modifier->LIBS, flag);
-        //	 puts("changed LIBS");
     }
     if (strcmp(modifier->CFLAGS, "")) {
         modify(source->CFLAGS, modifier->CFLAGS, flag);
-        //	 puts("changed CFLAGS");
     }
     if (strcmp(modifier->LFLAGS, "")) {
         modify(source->LFLAGS, modifier->LFLAGS, flag);
-        //	 puts("changed LFLAGS");
     }
     if (strcmp(modifier->MAIN, "")) {
         modify(source->MAIN, modifier->MAIN, flag);
-        //	 puts("changed MAIN");
     }
     if (strcmp(modifier->CC, "")) {
         modify(source->CC, modifier->CC, flag);
-        //	 puts("changed CC");
     }
 }

@@ -7,7 +7,6 @@ char * strfr(char * a,char *f,char *r){
 	int sizeR=strlen(r);
 	int sizeM=sizeS+(sizeS*sizeR/sizeF)+1;
 	char *m=malloc(sizeof(char)*sizeM);
-//	char m[sizeM];
 	char * p=NULL;
 	int j=0;
 	int k=0;
@@ -38,7 +37,6 @@ char * strfr(char * a,char *f,char *r){
 		else
 			break;
 	}
-//	s=m;
 	*(m+j)='\0';
 	return m;
 }

@@ -11,3 +11,4 @@ Makefile*
 .projectile
 makefile
 makehelperInstalled
+cscope.out

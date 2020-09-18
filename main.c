@@ -130,9 +130,9 @@ int main(int argc, char *argv[]) {
       }
       if (!strcmp(inputData.CC, "")) {
           if (lang == 0) {
-              assign(inputData.CC, "clang");
+              assign(inputData.CC, "gcc");
           } else if (lang == 1) {
-              assign(inputData.CC, "clang++");
+              assign(inputData.CC, "g++");
           }
 
       }

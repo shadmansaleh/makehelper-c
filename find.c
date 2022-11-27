@@ -113,7 +113,7 @@ char *getFiles(const char *path, const char *patern, int showHidden) {
   checkDir(path, showHidden);
   char *out;
   int paternLength = strlen(patern);
-  if (strcmp(patern, "") && patern != NULL) {
+  if (strcmp(patern, "") && patern != NULL && findResult) {
     char *file = getWord(findResult, '\n');
     if (!file)
       return NULL;
@@ -129,11 +129,12 @@ char *getFiles(const char *path, const char *patern, int showHidden) {
         strncpy(outPos_P + len, " ", 1);
         outPos_P += len + 1;
       }
-      free(file);
     } while ((file = getWord(NULL, '\n')));
+    free(file);
     *outPos_P = 0;
-  } else
-    out = strdup(findResult);
+  } else {
+    out = strdup(findResult ? findResult : "");
+  }
   cleanFindResult();
   return out;
 }

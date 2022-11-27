@@ -2,7 +2,7 @@ MAIN = makehelper
 SRCS = main.c modify.c makenew.c strfr.c autofind.c find.c readMakefile.c 
 INCLUDES = 
 LIBS = 
-CFLAGS = -Wall -Wextra -pedantic-errors -O3
+CFLAGS = -Wall -Wextra -pedantic-errors -O0 -g -fsanitize=address
 LFLAGS = 
 CC = clang
 OBJS = $(SRCS:.c=.o)

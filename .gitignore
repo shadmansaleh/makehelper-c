@@ -6,9 +6,9 @@ GRTAGS
 GTAGS
 .ctags
 tags
-Makefile*
+Makefile2
 .ccls-cache
 .projectile
-makefile
+# makefile
 makehelperInstalled
 cscope.out

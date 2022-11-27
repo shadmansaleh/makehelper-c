@@ -131,6 +131,7 @@ char *getFiles(const char *path, const char *patern, int showHidden) {
       }
       free(file);
     } while ((file = getWord(NULL, '\n')));
+    *outPos_P = 0;
   } else
     out = strdup(findResult);
   cleanFindResult();
